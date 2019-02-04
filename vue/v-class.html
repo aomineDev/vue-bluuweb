@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue.js - Bluuweb</title>
+
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="css/v-class.css">
+</head>
+<body>
+	<div id="app">
+		<h1 class="text-center p-3">Welcome to {{ msg }}</h1>
+		<div class="container">
+			<div :class="['p-3', 'text-white', 'format', background]">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam maxime vel saepe facere soluta harum aspernatur accusantium tempora ab autem quis modi necessitatibus, laboriosam, sed iste dolor ipsam ea, quod veniam aperiam sunt molestiae reprehenderit! Id ullam voluptatibus quos quo iste quibusdam eos, delectus aut velit fugit, laboriosam, animi saepe.</p>
+			</div>
+			<div class="change">
+				<label for="change1">Change:</label>
+				<input type="text" placeholder="background" id="change1" v-model="background">
+			</div>
+			<div class="p-3 text-white format" :class="{'bg-primary': color, 'bg-success': !color}">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam maxime vel saepe facere soluta harum aspernatur accusantium tempora ab autem quis modi necessitatibus, laboriosam, sed iste dolor ipsam ea, quod veniam aperiam sunt molestiae reprehenderit! Id ullam voluptatibus quos quo iste quibusdam eos, delectus aut velit fugit, laboriosam, animi saepe.</p>
+			</div>
+			<div class="change">
+				<button @click="changeValue()">Change</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/v-class.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue.js - Bluuweb</title>
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+</head>
+<body>
+	<div id="app">
+		<h1 class="text-center">{{ title }}.js</h1>
+		<div class="container">
+			<h2>{{ msg }}</h2>
+			<button class="btn btn-primary" @click="msg = 'saludo cambiado'">Cambiar</button>
+			<button class="btn btn-danger" @click="Destruir()">Destroyed</button>
+		</div>
+	</div>
+
+	<!-- vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/lifecycle.js"></script>
+</body>
+</html>

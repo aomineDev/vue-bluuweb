@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue.js - Bluuweb</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/frutas.css">
+</head>
+<body>
+	<div id="app">
+		<h1>Welcome to {{ msg }}</h1>
+		<div class="container">
+			<h2>Nuevas Frutas?</h2>
+			<div class="new">
+				<input type="text" placeholder="Fruta" v-model="newFruta.name" @keyup.enter="addFruta()">
+				<input type="number" placeholder="Stock" v-model.number="newFruta.stock" @keyup.enter="addFruta()">
+				<button @click="addFruta()">Enviar</button>
+			</div>
+			<h2>{{ title }}</h2>
+			<ul>
+				<li v-for="(fruta, index) of frutas" :key="fruta.id">
+					<div class="container-frutas">
+						<p>
+							{{index + 1}}.
+							<span :class="{'tachado': fruta.stock == 0}">{{ fruta.name | capitalize }}</span>
+							<span v-if="fruta.stock != 0">  - Stock {{ fruta.stock }}</span>
+							<span v-else> - Sin stock</span>
+						</p>
+					</div>
+					<div class="container-buttons">
+						<button @click="addStock(index)">+</button>
+						<button @click="lessStock(index)">-</button>
+						<button @click="removeFruta(index)">Remove</button>
+					</div>
+				</li>
+			</ul>
+			<h2>Total: {{ sumarFrutas }}</h2>
+		</div>
+	</div>
+
+	<!-- vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/frutas.js"></script>
+</body>
+</html>
